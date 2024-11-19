@@ -3,7 +3,6 @@
 import * as React from "react"
 import {
   AudioWaveform,
-  BookOpen,
   Bot,
   Frame,
   GalleryVerticalEnd,
@@ -113,15 +112,17 @@ const data = {
 export function AppSidebar({
   username,
   email,
+  avatar,
   ...props
 }: React.ComponentProps<typeof Sidebar> & {
   username: string
   email: string | undefined
+  avatar: string | undefined
 }) {
   const user = {
     name: username,
     email: email || "Sin correo",
-    avatar: "/favicon.ico",
+    avatar: avatar || "/favicon.ico",
   }
 
   return (

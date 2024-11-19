@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai';
-import { streamText, tool } from 'ai';
-import { z } from 'zod';
+import { streamText } from 'ai';
+import { auth } from '@clerk/nextjs/server'
 
 export const runtime = 'edge';
 
@@ -27,6 +27,7 @@ const randomProfile = customerProfiles[Math.floor(Math.random() * customerProfil
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
+  await auth.protect()
   const { messages } = await req.json();
 
   const result = await streamText({

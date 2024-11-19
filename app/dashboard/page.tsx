@@ -6,21 +6,22 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { cookies } from "next/headers"
+import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 
 export default async function Page() {
-  const cookieStore = await cookies()
-  if (!cookieStore.has("bci-username")) {
+  const user = await currentUser()
+
+  if (!user) {
     redirect("/")
   }
 
-  const username = cookieStore.get("bci-username")!.value
-  const email = cookieStore.get("bci-email")?.value
+  const username = user?.username
+  const email = user?.emailAddresses[0].emailAddress
 
   return (
     <SidebarProvider>
-      <AppSidebar variant="inset" username={username} email={email} />
+      <AppSidebar variant="inset" username={username ?? ''} email={email ?? ''} avatar={user?.imageUrl} />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
           <div className="flex items-center gap-2 px-4">
