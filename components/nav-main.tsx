@@ -54,9 +54,16 @@ export function NavMain({
               <CollapsibleContent>
                 <SidebarMenuSub>
                   {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
+                    <SidebarMenuSubItem
+                      className={`${subItem.title === "Feedback" ||
+                        subItem.title === "Calificaciones" ? "text-muted-foreground/70 hover:text-muted-foreground/70 cursor-default" : ""
+                        }`}
+                      key={subItem.title}
+                    >
+                      <SidebarMenuSubButton className={`${subItem.title === "Feedback" ||
+                        subItem.title === "Calificaciones" ? "text-muted-foreground/70 hover:text-muted-foreground/70 cursor-default" : ""
+                        }`} asChild>
+                        <a className={`${subItem.title === "Feedback" || subItem.title === "Calificaciones" ? "text-muted-foreground/70" : ""}`} href={subItem.url}>
                           <span>{subItem.title}</span>
                         </a>
                       </SidebarMenuSubButton>

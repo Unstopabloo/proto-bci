@@ -34,33 +34,20 @@ const data = {
     {
       name: "Bci",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Banco Estado",
-      logo: AudioWaveform,
-      plan: "Enterprise",
-    },
+      plan: "Banco",
+    }
   ],
   navMain: [
     {
-      title: "Apps",
+      title: "Simulaciones",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "Foro",
-          url: "/forum",
-        },
-        {
-          title: "Simulación",
-          url: "/simulation",
-        },
-        {
-          title: "TED Talks",
-          url: "/ted-talks",
-        },
+          title: "Asistente de banca",
+          url: "/dashboard",
+        }
       ],
     },
     {
@@ -70,25 +57,14 @@ const data = {
       items: [
         {
           title: "Feedback",
-          url: "/feedbacks",
+          url: "#",
         },
         {
           title: "Calificaciones",
-          url: "/ratings",
+          url: "#",
         },
       ],
-    },
-    {
-      title: "Configuración",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "/settings",
-        }
-      ],
-    },
+    }
   ],
   projects: [
     {
