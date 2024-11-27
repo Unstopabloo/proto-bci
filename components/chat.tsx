@@ -5,7 +5,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useChat } from "ai/react";
 import { useUser } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "lucide-react";
 
 export function UIChat() {
   const { messages, input, handleInputChange, handleSubmit, setMessages } = useChat();

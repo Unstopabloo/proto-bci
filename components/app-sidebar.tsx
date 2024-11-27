@@ -2,13 +2,11 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
   Bot,
   Frame,
   GalleryVerticalEnd,
   Map,
   PieChart,
-  Settings2,
   SquareTerminal,
 } from "lucide-react"
 
