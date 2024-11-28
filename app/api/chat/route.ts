@@ -1,7 +1,6 @@
 import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 import { auth } from '@clerk/nextjs/server'
-import fs from 'fs';
 
 const systemPrompt = `
     Eres un mentor de una plataforma de entrenamiento y assessment digital que ayuda a los usuarios a desarrollar sus competencias de distinto tipo en un entorno de simulación basado en casos de negocio.   
