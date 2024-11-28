@@ -45,19 +45,7 @@ export async function POST(req: Request) {
   const result = await streamText({
     model: anthropic('claude-3-5-sonnet-latest'),
     system: systemPrompt,
-    messages: [
-      ...messages,
-      {
-        role: 'data',
-        content: [
-          {
-            type: 'file',
-            data: fs.readFileSync('./lib/data.pdf'),
-            mimeType: 'application/pdf',
-          },
-        ]
-      }
-    ]
+    messages
   });
 
   return result.toDataStreamResponse();
