@@ -8,6 +8,7 @@ import {
 } from '@clerk/nextjs'
 import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function Home() {
   const user = await currentUser()
@@ -31,9 +32,13 @@ export default async function Home() {
           </Button>
         </SignedOut>
         <SignedIn>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col items-center gap-2">
             <p>Hola, {user?.firstName}</p>
-            <UserButton />
+            <Button asChild>
+              <Link href="/dashboard">
+                Ir a la app
+              </Link>
+            </Button>
           </div>
         </SignedIn>
       </main>
